@@ -1,0 +1,27 @@
+{
+  "name": "vixducis/phpstan-utilities",
+  "description": "A collection of useful utilities to transform or create types.",
+  "type": "phpstan-extension",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Vixducis\\PhpstanUtilities\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Wouter Henderickx",
+      "email": "wouter.henderickx@gmail.com"
+    }
+  ],
+  "require": {
+    "phpstan/phpstan": "^2.0"
+  },
+  "extra": {
+    "phpstan": {
+      "includes": [
+        "extension.neon"
+      ]
+    }
+  }
+}
