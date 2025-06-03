@@ -14,4 +14,8 @@ services:
         class: Vixducis\PhpstanUtilities\Resolver\ArrayValuesTypeResolver
         tags:
             - phpstan.phpDoc.typeNodeResolverExtension
+    - 
+        class: Vixducis\PhpstanUtilities\Resolver\UnwrapSingletonArrayResolver
+        tags:
+            - phpstan.phpDoc.typeNodeResolverExtension
   
