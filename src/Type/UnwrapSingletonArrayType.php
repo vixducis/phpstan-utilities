@@ -23,10 +23,12 @@ class UnwrapSingletonArrayType extends AbstractSimpleUtilityType
                 $size->equals(new ConstantIntegerType(1))
                 && $values->isArray()->yes()
             ) {
-                return new UnionType([
-                    $type,
-                    $values->getIterableValueType(),
-                ]);
+                $arrayValueType = $values->getIterableValueType();
+                return new UnionType(
+                    $arrayValueType instanceof UnionType
+                        ? [$type, ...$arrayValueType->getTypes()]
+                        : [$type, $arrayValueType]
+                );
             }
         }
 
