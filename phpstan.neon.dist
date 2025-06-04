@@ -5,17 +5,5 @@ parameters:
   ignoreErrors:
     - '#Implementing PHPStan\\Type\\CompoundType is not covered by backward compatibility promise. The interface might change in a minor PHPStan version.#'
     - '#Using PHPStan\\Type\\Traits\\LateResolvableTypeTrait is not covered by backward compatibility promise. The trait might change in a minor PHPStan version.#'
-services:
-    - 
-        class: Vixducis\PhpstanUtilities\Resolver\UnionToIntersectionTypeResolver
-        tags:
-            - phpstan.phpDoc.typeNodeResolverExtension
-    - 
-        class: Vixducis\PhpstanUtilities\Resolver\ArrayValuesTypeResolver
-        tags:
-            - phpstan.phpDoc.typeNodeResolverExtension
-    - 
-        class: Vixducis\PhpstanUtilities\Resolver\UnwrapSingletonArrayResolver
-        tags:
-            - phpstan.phpDoc.typeNodeResolverExtension
-  
+includes:
+  - extension.neon
